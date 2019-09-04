@@ -7,9 +7,8 @@ import './style.css';
 const Navigation = () => {
   return (
     <div className="Menu">
-      <Link to="/">Home</Link><br></br>
-      <Link to="/Article">Article</Link> <br></br>
-      <Link to="/Authors">Authors</Link><br></br>
+      <Link to="/" className="menu-text">Home</Link><br></br>
+      <Link to="/Authors" className="menu-text">Authors</Link><br></br>
     </div>
   );
 };

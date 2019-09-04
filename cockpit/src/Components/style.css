@@ -1,3 +1,12 @@
+body {
+  margin:0;
+  padding:0;
+  background: black;
+  color:white;
+}
+
+
+
 .center{
   text-align: center;
   Color:blue;
@@ -5,5 +14,56 @@
 
 .Menu {
   text-align: center;
-  margin-top: 10px;
+  position: relative;
+  font-size: 30px;
+  top: 10px;
+  color: white;
+}
+
+
+
+.Column {
+  text-align: center;
+  position: relative;
+}
+
+
+.main-tr {
+ text-align: center;
+ display:block;
+
+ border: 1px solid white;
+}
+
+
+
+
+.title {
+  color: white;
+  font-size: 25px;
+  transition: all 1000ms;
+}
+
+.title:hover {
+  opacity: 0.8;
+  font-size: 25px;
+  transition: all 1000ms;
+  font-size: 28px;
+
+
+}
+
+
+.table {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.menu-text {
+  color:white;
+  transition: all 1000ms;
+}
+
+.menu-text:hover {
+  opacity: 0.6;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route } from "react-router";
-import './style.css'
+import {Link} from "react-router-dom";
+import './style.css';
 import axios from 'axios';
 
 export default class Forum extends React.Component {
@@ -23,8 +24,8 @@ export default class Forum extends React.Component {
         this.setState
           ({
           data:res.data.entries
-        })
 
+        })
       })
   }
 
@@ -38,11 +39,10 @@ export default class Forum extends React.Component {
     const loop = this.state.data.map(data => {
       return (
         <tbody key={data._id}>
-           <tr>
-             <h1>{data.Title}</h1>
-             <a href={'/Article' + data._id}>{data.Author.display}</a>
+           <tr className="main-tr">
+             <Link to={`/Article/${data._id}`} className="title">{data.Title}</Link> <br></br>
+             <a>{data.Author.display}</a>
              <h3>{data.Date}</h3>
-
            </tr>
          </tbody>
       )
@@ -50,7 +50,6 @@ export default class Forum extends React.Component {
     })
     return (
       <div className="maindiv">
-      <h1 className="center"> POSTS </h1>
       <table className="table">
         {loop}
       </table>

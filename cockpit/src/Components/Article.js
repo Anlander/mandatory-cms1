@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
@@ -9,18 +9,25 @@ export default class Blogg extends React.Component {
     this.state = {
       data: [],
       entries: [],
+      title: "",
+      des: "",
+      date:"",
 
     }
   }
 
 
   componentDidMount() {
-    axios.get(`http://192.168.99.100:8081/api/collections/get/Article`)
+    const id = this.props.match.params.id;
+    axios.get(`http://192.168.99.100:8081/api/collections/get/Article?filter[_id]=${id}`)
       .then(res => {
         const data = res.data;
+        console.log(data.entries[0]);
         console.log(data);
-        this.setState({data:res.data.entries})
-        console.log(res.data.entries);
+        this.setState({
+          data:res.data.entries
+        })
+        console.log(data.entries);
       })
   }
 
@@ -32,20 +39,19 @@ export default class Blogg extends React.Component {
       return (
         <tbody key={data._id}>
            <tr>
+             <h1>{data.Author.display}</h1>
+             <textfield>{data.Body}</textfield>
+             <h3>{data.Date}</h3>
 
-             <h1>{data.Title}</h1>
-             <h3>{data.Body}</h3>
-             <h4>Published: {data.Date}</h4>
            </tr>
          </tbody>
       )
 
     })
+
     return (
       <div className="maindiv">
-      <table className="table">
         {loop}
-      </table>
     </div>
     )
   }

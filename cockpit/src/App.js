@@ -15,8 +15,8 @@ class App extends Component {
       <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Article" component={Blogg} />
-          <Route path="/Authors" component={Authors} />
+          <Route path="/Article/:id" component={Blogg} />
+          <Route path="/Authors/" component={Authors} />
         </Switch>
       </BrowserRouter>
 

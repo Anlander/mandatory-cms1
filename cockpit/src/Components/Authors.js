@@ -14,6 +14,7 @@ export default class Authors extends React.Component {
   }
 
 
+
   componentDidMount() {
     axios.get(`http://192.168.99.100:8081/api/collections/get/Authors`)
       .then(res => {
@@ -31,13 +32,15 @@ export default class Authors extends React.Component {
     const loop = this.state.data.map(data => {
       console.log(data._id);
       return (
+      <div>
         <tbody key={data._id}>
-           <tr>
-              <p><img src={"http://192.168.99.100:8081/" + data.Avatar.path} alt="picture" /> </p>
+           <tr className="Column">
+              <p ><img src={"http://192.168.99.100:8081/" + data.Avatar.path} alt="picture" className="picture" /> </p>
               <h1>{data.Name}</h1>
               <textfield>{data.Description}</textfield>
            </tr>
          </tbody>
+         </div>
       )
 
     })
