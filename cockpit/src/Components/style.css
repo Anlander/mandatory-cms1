@@ -29,10 +29,15 @@ body {
 
 
 .main-tr {
- text-align: center;
  display:block;
-
  border: 1px solid white;
+ position: relative;
+ top: 30px;
+}
+
+td {
+  width: 300px;
+
 }
 
 
@@ -66,4 +71,16 @@ body {
 
 .menu-text:hover {
   opacity: 0.6;
+}
+
+
+.next {
+  float: right;
+  position: relative;
+  top: -230px;
+  right: 5px;
+}
+
+.next:hover {
+  cursor: pointer;
 }

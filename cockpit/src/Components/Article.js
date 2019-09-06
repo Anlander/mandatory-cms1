@@ -12,6 +12,7 @@ export default class Blogg extends React.Component {
       title: "",
       des: "",
       date:"",
+    
 
     }
   }
@@ -30,6 +31,8 @@ export default class Blogg extends React.Component {
         console.log(data.entries);
       })
   }
+
+
 
   render() {
     if (this.data === null){
